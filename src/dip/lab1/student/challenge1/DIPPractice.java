@@ -11,14 +11,29 @@ public class DIPPractice {
      */
     public static void main(String[] args) {
         
-        //InputStrategy inStrategy = new ConsoleInput();
-        InputStrategy inStrategy = new GuiInput();
+        /*
+         * Uses console for input
+         */
+        InputStrategy inStrategy = new ConsoleInput();
         
-        //OutputStrategy outStrategy = new ConsoleOutput();
-        OutputStrategy outStrategy = new GuiOutput();
+        /*
+         * Uses JOptionPane for input
+         */
+        //InputStrategy inStrategy = new GuiInput();
         
+        /*
+         * Uses console for output
+         */
+        OutputStrategy outStrategy = new ConsoleOutput();
+        
+        /*
+         * Uses JOptionPane for output
+         */
+        //OutputStrategy outStrategy = new GuiOutput();
+        
+        /*
+         * One step process to retreive input and send to output
+         */
         outStrategy.outputMsg(inStrategy.inputMsg());
-        //MessageService msgService = new MessageService();
-        //msgService.outputMsg(outStrategy);
     }
 }
