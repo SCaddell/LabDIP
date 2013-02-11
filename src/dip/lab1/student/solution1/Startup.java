@@ -6,7 +6,7 @@ import java.text.NumberFormat;
  * Just a start and test class for this program. You may modify this class
  * in any way you see fit.
  *
- * @author jlombardo
+ * @author Stuart Caddell
  */
 public class Startup {
 
