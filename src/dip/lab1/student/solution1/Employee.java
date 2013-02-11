@@ -5,7 +5,7 @@ package dip.lab1.student.solution1;
  * Find and fix all encapsulation, DIP and best practice problems learned
  * so far.
  *
- * @author your name goes here
+ * @author Stuart Caddell
  */
 public interface Employee {
     

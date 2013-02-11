@@ -6,7 +6,7 @@ package dip.lab1.student.solution1;
 
 /**
  *
- * @author Stuart - HP AMD 10
+ * @author Stuart Caddell
  */
 public interface AnnualBonus {
     

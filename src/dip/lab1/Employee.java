@@ -5,7 +5,7 @@ package dip.lab1;
  * Find and fix all encapsulation, DIP and best practice problems learned
  * so far.
  *
- * @author your name goes here
+ * @author Stuart Caddell
  */
 public class Employee {
     // You gotta question if these are appropriate for ALL employees?

@@ -4,7 +4,7 @@ package dip.lab1;
  * A simple implementation sub-class of Employee. These are low-level classes
  * in the DIP. Does it meet the rules of DIP? If not fix it.
  *
- * @author your name goes here
+ * @author Stuart Caddell
  */
 public class SalariedEmployee extends Employee {
 
