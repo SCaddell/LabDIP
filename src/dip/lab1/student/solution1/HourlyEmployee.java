@@ -8,6 +8,7 @@ package dip.lab1.student.solution1;
  */
 public class HourlyEmployee implements Employee {
     
+    private final String EMPLOYEE_TYPE = "Hourly";    // type of employee 
     private double hourlyRate = 0;  // hourly wage for employee
     private double totalHrsForYear = 0; // total expected hours per year 
             
@@ -51,4 +52,8 @@ public class HourlyEmployee implements Employee {
         return totalHrsForYear;
     }
 
+    @Override
+    public String getEMPLOYEE_TYPE() {
+        return EMPLOYEE_TYPE;
+    }
 }

@@ -46,5 +46,11 @@ public interface Employee {
      * @return
      */
     public double getTotalHrsForYear();
+    
+    /**
+     * Returns Employee Type (Salaried or Hourly, or any new types)
+     * @return 
+     */
+    public String getEMPLOYEE_TYPE();
 
 }

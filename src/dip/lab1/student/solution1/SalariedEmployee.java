@@ -8,6 +8,7 @@ package dip.lab1.student.solution1;
  */
 public class SalariedEmployee implements Employee, AnnualBonus {
 
+    private final String EMPLOYEE_TYPE = "Salaried";    // type of employee 
     private double annualSalary;    // employee's annual salary
     private double annualBonus;     // employee's annual bonus
     private double exemptHoursExpected; // expected minimum total annual hours
@@ -58,8 +59,12 @@ public class SalariedEmployee implements Employee, AnnualBonus {
     }
 
     @Override
+    // This can be implemented with or without bonus, based upon requirements
+    // Since the HRServie (psuedo requirements) wanted amounts without the 
+    // bonus, that is how it was implemented.
     public double getAnnualCompensationForEmployee() {
-        return annualSalary + annualBonus;
+        return annualSalary;
+        // return annualSalary + annualBonus;
     }
 
     @Override
@@ -81,6 +86,9 @@ public class SalariedEmployee implements Employee, AnnualBonus {
     public double getAnnualBonus() {
         return annualBonus;
     }
-
     
+    @Override
+    public String getEMPLOYEE_TYPE() {
+        return EMPLOYEE_TYPE;
+    }
 }
