@@ -1,4 +1,4 @@
-package dip.lab1;
+package dip.lab1.student.solution1;
 
 /**
  * The concrete super class of all employee types. What's wrong with this class?
@@ -7,88 +7,44 @@ package dip.lab1;
  *
  * @author your name goes here
  */
-public class Employee {
-    // You gotta question if these are appropriate for ALL employees?
-    private double hourlyRate;
-    private double totalHrsForYear;
-    private double annualSalary;
-    private double annualBonus;
-
+public interface Employee {
+    
     /**
-     * Returns annual wages for hourly workers. Is this polymorphic?
-     * Could it be? Does it belong here?
-     *
-     * @return annual wages for hourly workers using the formula
-     * annualWages = hourlyRate * totalHrsForYear
+     * Sets Annual Salary or Hourly Wage
      */
-    public double getAnnualWages() {
-        return hourlyRate * totalHrsForYear;
-    }
-
+    public void setAnnualSalaryOrHourlyWage(double annualSalaryOrHourlyWage);
+    
     /**
-     * Returns annual bonus for salaried workers. Is this polymorphic?
-     * Could it be? Does it belong here?
-     *
-     * @return annual bonus or zero if none.
+     * gets Annual Salary or expected Wages not including Bonus (if appropriate)
+     * @return 
      */
-    public double getAnnualBonus() {
-        return annualBonus;
-    }
-
+    public double getAnnualSalaryOrHourlyWage();
+    
     /**
-     * Is this polymorphic? Should it be? Does it belong here?
-     * @param annualBonus -- think carefully about this
+     * Annual Salary or expected Wages including Bonus (if appropriate)
+     * @return 
      */
-    public void setAnnualBonus(double annualBonus) {
-        this.annualBonus = annualBonus;
-    }
-
+    public double getAnnualCompensationForEmployee();
+   
     /**
-     * Is this polymorphic? Should it be? Does it belong here?
-     * @return
-     */
-    public double getAnnualSalary() {
-        return annualSalary;
-    }
-
-    /**
-     * Is this polymorphic? Should it be? Does it belong here?
-     * @param annualSalary - think carefully about this
-     */
-    public void setAnnualSalary(double annualSalary) {
-        this.annualSalary = annualSalary;
-    }
-
-    /**
-     * Is this polymorphic? Should it be? Does it belong here?
-     * @return
-     */
-    public double getHourlyRate() {
-        return hourlyRate;
-    }
-
-    /**
-     * Is this polymorphic? Should it be? Does it belong here?
-     * @param hourlyRate -- think carefully about this
-     */
-    public void setHourlyRate(double hourlyRate) {
-        this.hourlyRate = hourlyRate;
-    }
-
-    /**
-     * Is this polymorphic? Should it be? Does it belong here?
-     * @return
-     */
-    public double getTotalHrsForYear() {
-        return totalHrsForYear;
-    }
-
-    /**
-     * Is this polymorphic? Should it be? Does it belong here?
+     * This would be a requirements decision, but for now I am leaving it here.
+     * Obviously it is beneficial for hourly employees.  My reason for 
+     * requiring it for salary (and any future employee types) is that all
+     * all salaries have at a minimum an "unspoken" minimum number of hours
+     * to be worked by the employee.  This can vary by geographic location,
+     * or whether or not the salaried employee is "full time" or not.
      * @param totalHrsForYear -- think carefully about this
      */
-    public void setTotalHrsForYear(double totalHrsForYear) {
-        this.totalHrsForYear = totalHrsForYear;
-    }
+    public void setTotalHrsForYear(double totalHrsForYear);
+    
+    /**
+     * Is this polymorphic? Yes, see above comment.  In the Northeast U.S. a 
+     * lot of salary work weeks are based upon a 37.5 hour work week.
+     * (working 9 to 5 with a half hour off for lunch).  In the Midwest 40 hours
+     * is expected.  (37.5 hrs * 52 weeks versus 40 hrs * 52 weeks)
+     * Having this info for all employees is helpful. 
+     * @return
+     */
+    public double getTotalHrsForYear();
 
 }

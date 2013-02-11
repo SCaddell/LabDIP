@@ -1,4 +1,4 @@
-package dip.lab1;
+package dip.lab1.student.solution1;
 
 import javax.swing.JOptionPane;
 
