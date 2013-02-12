@@ -11,7 +11,7 @@ package dip.lab2.student.solution1;
 public interface TipCalculator {
     
     /**
-     * Sets the numberr of units the tip is to be based upon.
+     * Sets the number of units the tip is to be based upon.
      * For food service it would be bill amount
      * For baggage, it would be the number of bags
      * Each Tip type should have it's own "based upon"
