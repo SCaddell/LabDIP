@@ -21,7 +21,7 @@ public interface TipCalculator {
     /**
      * Sets the Service Rating, or the quality of service received.
      */
-    void setServiceRating(String serviceQuality);
+    void setServiceRating(Enum serviceQuality);
     
     /**
      * Gets the tip amount 

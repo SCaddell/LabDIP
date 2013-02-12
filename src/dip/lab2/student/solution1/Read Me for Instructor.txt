@@ -1,0 +1,2 @@
+I think I got most of the concept and solution.  I had questions on the ServiceQuality enum.  I will bring this up in class if we have time.
+Stuart Caddell
