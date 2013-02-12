@@ -26,9 +26,23 @@ public class Startup {
  
     public static void main(String[] args) {
         
-        BaggageServiceTipCalculator service =
+//        BaggageServiceTipCalculator service =
+//                new BaggageServiceTipCalculator(
+//                BaggageServiceTipCalculator.ServiceQuality.FAIR,5);
+        
+        TipCalculator bagService = 
                 new BaggageServiceTipCalculator(
                 BaggageServiceTipCalculator.ServiceQuality.FAIR,5);
+        
+        TipCalculator foodService = 
+                new FoodServiceTipCalculator(
+                FoodServiceTipCalculator.ServiceQuality.GOOD,50.00);
+        
+        System.out.println("The tip for the bag service is $"
+                + bagService.getTip());
+        
+        System.out.println("The tip for the food service is $"
+                + foodService.getTip());
         
     }
 

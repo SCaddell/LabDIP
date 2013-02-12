@@ -10,7 +10,7 @@ import dip.lab2.*;
  *
  * @author Stuart Caddell
  */
-public class BaggageServiceTipCalculator {
+public class BaggageServiceTipCalculator implements TipCalculator {
     private static final double MIN_BILL = 0.00;
     private static final double MAX_BILL = 100.00;
     private static final String BILL_ENTRY_ERR =
@@ -21,20 +21,25 @@ public class BaggageServiceTipCalculator {
     private static final double POOR_RATE = 0.10;
 
     private double baseTipPerBag;
-    private int bagCount;
+    // private int bagCount;  changed to a double per interface
+    private double bagCount;  // could add logic to make sure whole number
     public enum ServiceQuality {
         GOOD, FAIR, POOR
     }
     private ServiceQuality serviceQuality;
 
-    public BaggageServiceTipCalculator(ServiceQuality q, int bags) {
+    public BaggageServiceTipCalculator(ServiceQuality q, double
+            bags) {
         this.setServiceRating(q); // perform validation
-        this.setBagCount(bags);
+        // this.setBagCount(bags);
+        this.setNumUnitsTipBasedUpon(bags);
 
         baseTipPerBag = 1.00; // set default value
     }
 
-    public double getTipForBaggeHandler() {
+    // public double getTipForBaggeHandler() {
+    @Override
+    public double getTip() {
         double tip = 0.00; // always initialize local variables
 
         switch(serviceQuality) {
@@ -61,11 +66,12 @@ public class BaggageServiceTipCalculator {
         return serviceQuality;
     }
 
-    public int getBagCount() {
+    public double getBagCount() {
         return bagCount;
     }
 
-    public final void setBagCount(int bagCount) {
+    @Override
+    public final void setNumUnitsTipBasedUpon(double bagCount) {
         if(bagCount < 0) {
             throw new IllegalArgumentException(
                     "bag count must be greater than or equal to zero");

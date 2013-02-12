@@ -1,6 +1,6 @@
 package dip.lab2.student.solution1;
 
-import dip.lab2.*;
+import dip.lab2.student.*;
 
 /**
  * An example low-level class. Does this class definition follow the DIP?
@@ -10,7 +10,7 @@ import dip.lab2.*;
  *
  * @author Stuart Caddell
  */
-public class FoodServiceTipCalculator {
+public class FoodServiceTipCalculator implements TipCalculator {
     private static final double MIN_BILL = 0.00;
     private static final String BILL_ENTRY_ERR =
             "Error: bill must be greater than or equal to " + MIN_BILL;
@@ -26,9 +26,11 @@ public class FoodServiceTipCalculator {
 
     public FoodServiceTipCalculator(ServiceQuality q, double billAmt) {
         this.setServiceRating(q);
-        this.setBill(billAmt);
+        //this.setBill(billAmt);
+        this.setNumUnitsTipBasedUpon(billAmt);
     }
 
+    @Override
     public double getTip() {
         double tip = 0.00; // always initialize local variables
 
@@ -47,13 +49,16 @@ public class FoodServiceTipCalculator {
         return tip;
     }
 
-    public final void setBill(double billAmt) {
+    //public final void setBill(double billAmt) {
+    @Override
+    public final void setNumUnitsTipBasedUpon(double billAmt) {
         if(billAmt < MIN_BILL) {
             throw new IllegalArgumentException(BILL_ENTRY_ERR);
         }
         bill = billAmt;
     }
 
+    // I know I need to update this, but not quite sure how it works (enum)
     public final void setServiceRating(ServiceQuality q) {
         // No need to validate because enums provide type safety!
         serviceQuality = q;
